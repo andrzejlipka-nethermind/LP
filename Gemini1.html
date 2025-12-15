@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultAI | AI Co-workers for Professional Services</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(90deg, #2563EB, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Editing Outline */
+        [contenteditable="true"]:focus {
+            outline: 2px dashed #2563EB;
+            padding: 2px;
+            border-radius: 4px;
+        }
+
+        /* Floating Edit Button */
+        #edit-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <!-- Logo Placeholder -->
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">R</div>
+                    <span class="font-bold text-xl tracking-tight">ResultAI</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#problem" class="text-slate-600 hover:text-blue-600 font-medium transition">The Problem</a>
+                    <a href="#products" class="text-slate-600 hover:text-blue-600 font-medium transition">Solution</a>
+                    <a href="#how-it-works" class="text-slate-600 hover:text-blue-600 font-medium transition">How it Works</a>
+                </div>
+                <div>
+                    <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-lg shadow-blue-500/20">
+                        Book a Pilot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (The Hook) -->
+    <section class="relative pt-20 pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-block mb-6 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-semibold text-sm">
+                For Professional Services Organizations and Teams
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-slate-900 leading-tight">
+                Helping Professional Services <br class="hidden md:block"/>
+                get <span class="text-gradient">real results</span> with AI
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 leading-relaxed">
+                Improve utilization, cut revenue leaks, and retain top talent. 
+                Deploy virtual AI co-workers that analyze your entire digital footprint to find the "unknown unknowns" slowing you down.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-blue-600/20 flex items-center justify-center gap-2">
+                    Start Your Pilot
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="#products" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-lg px-8 py-4 rounded-xl font-semibold transition flex items-center justify-center">
+                    View Products
+                </a>
+            </div>
+
+            <!-- Social Proof / Trust -->
+            <div class="mt-16 border-t border-slate-200 pt-8">
+                <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-6">Designed for modern stacks</p>
+                <div class="flex justify-center gap-8 md:gap-16 opacity-60 grayscale">
+                    <!-- Icons representing Slack, Notion, GitHub, etc. -->
+                    <i class="fab fa-slack text-4xl"></i>
+                    <i class="fab fa-github text-4xl"></i>
+                    <i class="fas fa-cube text-4xl"></i> <!-- Notion Rep -->
+                    <i class="fab fa-google text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Decorative Blob -->
+        <div class="absolute top-0 left-1/2 w-[800px] h-[800px] bg-blue-100 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+    </section>
+
+    <!-- PROBLEM SECTION (The Villain) -->
+    <section id="problem" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The "Informal System" is costing you money.</h2>
+                <p class="text-lg text-slate-600">
+                    Your most important data isn't in your ERP. It's hidden in Slack DMs, Notion pages, and GitHub commits. Without visibility, you face:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Pain Point 1 -->
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-red-200 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Revenue Leaks & Bench Time</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Skills are mismatched. Utilization drops because you can't see the "hidden bench." Your capacity needs are unclear.
+                    </p>
+                </div>
+
+                <!-- Pain Point 2 -->
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-red-200 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-user-xmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Unexpected Resignations & Employee Underperformance</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Your best engineers are burning out, but the signs are buried in code reviews and late-night Slack messages. While others hide behind "pseudo-activity".
+                    </p>
+                </div>
+
+                <!-- Pain Point 3 -->
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-red-200 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-chart-line-down"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Quality of Hire Issues</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Without data-driven performance analysis, you rely on "gut feeling" reviews, leading to bias and hiring the wrong talent.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION (The Hero's Tool) -->
+    <section id="products" class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-blue-400 font-bold tracking-wide uppercase text-sm">The Solution</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2">Meet your new AI Co-workers</h2>
+                <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">They read everything, forget nothing, and work 24/7 to surface actionable insights.</p>
+            </div>
+
+            <!-- Product 1: Staffing Manager -->
+            <div class="flex flex-col lg:flex-row items-center gap-12 mb-24">
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <div class="bg-slate-800/50 p-2 rounded-xl border border-slate-700 shadow-2xl">
+                        <!-- Placeholder for Staffing Dashboard -->
+                        <div class="aspect-video bg-slate-800 rounded-lg flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-slate-900/40"></div>
+                            <div class="text-center p-8">
+                                <i class="fa-solid fa-users-gear text-6xl text-blue-500 mb-4"></i>
+                                <div class="text-sm text-slate-400">Dashboard Visualization Placeholder</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <div class="inline-block bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-sm font-semibold mb-4 border border-blue-800">For Operations & Sales</div>
+                    <h3 class="text-3xl font-bold mb-4">AI Resource Manager</h3>
+                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                        Stop leaving money on the table. The Resource Manager connects skills to demand by analyzing Calendars, Slack discussions, GitHub activity and much more.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span class="text-slate-300"><strong>Maximize Utilization:</strong> Identify hidden bench capacity and shadow staffing.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span class="text-slate-300"><strong>Skill Matching:</strong> Match the right people to projects based on actual code contributions and feedbacks, not just CVs.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span class="text-slate-300"><strong>Prevent Revenue Leaks:</strong> Catch billing discrepancies before the invoice goes out.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 2: HR BP -->
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="inline-block bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold mb-4 border border-purple-800">For People & Culture</div>
+                    <h3 class="text-3xl font-bold mb-4">AI HR Business Partner</h3>
+                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                        Improve retention and hire quality. The HR BP monitors engagement signals across all platforms to give you a true pulse of your organization.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-purple-400 mt-1"></i>
+                            <span class="text-slate-300"><strong>Predict Burnout:</strong> Flag overwork patterns in commit times and communication tone.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-purple-400 mt-1"></i>
+                            <span class="text-slate-300"><strong>Performance Reviews:</strong> Generate unbiased, data-backed reviews based on actual output.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-purple-400 mt-1"></i>
+                            <span class="text-slate-300"><strong>Quality of Hires:</strong> Track new hire ramp-up velocity and cultural integration.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-slate-800/50 p-2 rounded-xl border border-slate-700 shadow-2xl">
+                        <!-- Placeholder for HR Dashboard -->
+                        <div class="aspect-video bg-slate-800 rounded-lg flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-tl from-purple-900/40 to-slate-900/40"></div>
+                            <div class="text-center p-8">
+                                <i class="fa-solid fa-heart-pulse text-6xl text-purple-500 mb-4"></i>
+                                <div class="text-sm text-slate-400">Dashboard Visualization Placeholder</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- THE PLAN (How it Works) -->
+    <section id="how-it-works" class="py-24 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Your Path to Real Results</h2>
+                <p class="mt-4 text-lg text-slate-600">We use a unique "Discovery-First" approach. We don't just guess; we analyze the data you already have.</p>
+            </div>
+
+            <div class="relative grid md:grid-cols-3 gap-8">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-blue-200 -z-10"></div>
+
+                <!-- Step 1 -->
+                <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-blue-100 text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-white shadow-lg">1</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">The Pilot</h3>
+                    <p class="text-slate-600 text-sm">
+                        We connect our AI to your data (Slack, Notion, GitHub). Within weeks, you get a <strong>Tangible Report</strong> with insights you missed.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-blue-100 text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-white shadow-lg">2</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">The Setup</h3>
+                    <p class="text-slate-600 text-sm">
+                        Based on the Pilot results, we configure your virtual co-workers. They live inside your systems, monitoring workflows 24/7.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-blue-100 text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-white shadow-lg">3</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">The Results</h3>
+                    <p class="text-slate-600 text-sm">
+                        You get higher utilization, lower turnover, and a system that automatically flags risks before they become costs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (Footer) -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Ready to see what you're missing?</h2>
+            <p class="text-xl text-slate-600 mb-10">
+                Don't let another month of utilization leaks or unexpected resignations go by. 
+                Our Pilot is low-risk and delivers actionable intelligence in your first report.
+            </p>
+            
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-inner max-w-md mx-auto">
+                <h3 class="text-lg font-bold text-slate-900 mb-4">Book a Discovery Call</h3>
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('This is a demo form. In a real deployment, this would connect to your CRM/Calendar.');">
+                    <div>
+                        <input type="email" placeholder="Work Email Address" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-lg shadow-blue-500/30 transition">
+                        Get Started
+                    </button>
+                    <p class="text-xs text-slate-500 mt-2">Limited pilot spots available for Q1.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">R</div>
+                <span class="font-bold text-white tracking-tight">ResultAI</span>
+            </div>
+            <div class="text-sm">
+                &copy; 2025 ResultAI. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EDIT MODE SCRIPT -->
+    <button id="edit-toggle" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-bold shadow-lg transition flex items-center gap-2">
+        <i class="fa-solid fa-pen-to-square"></i> <span id="edit-text">Edit Text</span>
+    </button>
+
+    <script>
+        const editBtn = document.getElementById('edit-toggle');
+        const editText = document.getElementById('edit-text');
+        let isEditing = false;
+
+        editBtn.addEventListener('click', () => {
+            isEditing = !isEditing;
+            const elements = document.querySelectorAll('h1, h2, h3, p, a, span, li, div');
+            
+            if (isEditing) {
+                document.body.setAttribute('contenteditable', 'true');
+                editText.textContent = "Stop Editing";
+                editBtn.classList.replace('bg-blue-600', 'bg-red-600');
+                editBtn.classList.replace('hover:bg-blue-700', 'hover:bg-red-700');
+            } else {
+                document.body.removeAttribute('contenteditable');
+                editText.textContent = "Edit Text";
+                editBtn.classList.replace('bg-red-600', 'bg-blue-600');
+                editBtn.classList.replace('hover:bg-red-700', 'hover:bg-blue-700');
+                alert('Changes visible! To save permanently, right-click the page and select "Save As..."');
+            }
+        });
+
+        // Prevent edit button from being editable itself
+        editBtn.setAttribute('contenteditable', 'false');
+    </script>
+</body>
+</html>
