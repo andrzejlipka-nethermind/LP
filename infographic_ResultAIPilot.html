@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultAI Pilot Process Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        resultDark: '#0B1120',
+                        resultCard: '#111827',
+                        // Rebranded Green Palette
+                        resultGreen: '#00E599', 
+                        resultGreenDim: 'rgba(0, 229, 153, 0.1)',
+                        resultGreenGlow: 'rgba(0, 229, 153, 0.5)',
+                        
+                        // Functional Colors (kept for context)
+                        alertRed: '#ef4444',
+                        neonPurple: '#8b5cf6', // Kept for "People AI" distinction
+                        neonOrange: '#f97316'  // Kept for "Projects AI" distinction
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'flow': 'flow 2s linear infinite',
+                    },
+                    keyframes: {
+                        flow: {
+                            '0%': { backgroundPosition: '0 0' },
+                            '100%': { backgroundPosition: '20px 20px' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B1120;
+            /* Rebranded background gradient to Green tint */
+            background-image: radial-gradient(circle at 50% 0%, #064e3b 0%, #0B1120 70%);
+            color: white;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .glass-panel:hover {
+            border-color: rgba(0, 229, 153, 0.3);
+        }
+        .glowing-text {
+            text-shadow: 0 0 15px rgba(0, 229, 153, 0.4);
+        }
+        .data-stream {
+            /* Updated to Green stream */
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0, 229, 153, 0.1),
+                rgba(0, 229, 153, 0.1) 10px,
+                rgba(0, 229, 153, 0.2) 10px,
+                rgba(0, 229, 153, 0.2) 20px
+            );
+        }
+        /* Custom arrow connecting stages */
+        .connector-arrow::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #374151;
+            font-size: 24px;
+        }
+        @media (max-width: 1024px) {
+            .connector-arrow::after {
+                content: '\f063'; /* Down arrow for mobile */
+                right: 50%;
+                top: auto;
+                bottom: -35px;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 overflow-x-hidden selection:bg-resultGreen selection:text-resultDark">
+
+    <!-- Navbar / Logo Area -->
+    <nav class="flex justify-between items-center max-w-7xl mx-auto mb-12">
+        <div class="flex items-center gap-2">
+            <!-- Simulated Logo Icon -->
+            <div class="w-8 h-8 rounded bg-resultGreen flex items-center justify-center text-resultDark font-bold">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <!-- Text Logo -->
+            <div class="text-2xl font-bold tracking-tight">
+                Result<span class="text-resultGreen">AI</span>
+            </div>
+        </div>
+        <div class="hidden md:block text-xs font-mono text-gray-500">
+            CONFIDENTIAL // Pilot OVERVIEW
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="text-center mb-16 relative z-10">
+        <div class="inline-block px-3 py-1 mb-4 border border-resultGreen/30 rounded-full bg-resultGreenDim text-resultGreen text-xs font-mono tracking-widest uppercase">
+            Pilot Methodology
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            From Raw Data to <span class="text-transparent bg-clip-text bg-gradient-to-r from-resultGreen to-emerald-200 glowing-text">"Real Results"</span> in 4 Weeks
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Turning your Professional Services data into proactive AI Co-workers. 
+            Secure. Fast. Impactful.
+        </p>
+    </header>
+
+    <!-- Main Workflow Grid -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
+        
+        <!-- Connecting Line Background (Desktop Only) -->
+        <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-gray-800 via-resultGreen/50 to-resultGreen opacity-20 -z-10 transform -translate-y-1/2 rounded"></div>
+
+        <!-- STAGE 1: THE INPUT -->
+        <div class="lg:col-span-3 flex flex-col gap-4 relative connector-arrow">
+            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 1: The Input</div>
+            <div class="glass-panel rounded-xl p-5 border-l-4 border-l-resultGreen relative overflow-hidden group hover:border-l-white transition-all">
+                <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i class="fa-solid fa-server text-6xl text-resultGreen"></i>
+                </div>
+                <h3 class="font-bold text-resultGreen mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-database"></i> Structured Silos
+                </h3>
+                
+                <!-- Silo 1 -->
+                <div class="bg-gray-900/80 rounded p-2 mb-2 border border-gray-700 text-sm hover:border-resultGreen/50 transition-colors">
+                    <div class="flex justify-between items-center text-gray-300 font-mono text-xs mb-1">
+                        <span>PSA / ERP</span>
+                        <i class="fa-brands fa-salesforce text-blue-400"></i>
+                    </div>
+                    <div class="text-[10px] text-gray-500 leading-tight">Billable Hours, Proj Codes, Forecasts</div>
+                </div>
+                <!-- Silo 2 -->
+                <div class="bg-gray-900/80 rounded p-2 mb-2 border border-gray-700 text-sm hover:border-resultGreen/50 transition-colors">
+                    <div class="flex justify-between items-center text-gray-300 font-mono text-xs mb-1">
+                        <span>HRIS / HCM</span>
+                        <i class="fa-solid fa-users text-pink-400"></i>
+                    </div>
+                    <div class="text-[10px] text-gray-500 leading-tight">Tenure, Comp Bands, Ratings</div>
+                </div>
+                <!-- Silo 3 -->
+                <div class="bg-gray-900/80 rounded p-2 border border-gray-700 text-sm hover:border-resultGreen/50 transition-colors">
+                    <div class="flex justify-between items-center text-gray-300 font-mono text-xs mb-1">
+                        <span>ATS</span>
+                        <i class="fa-solid fa-file-contract text-emerald-400"></i>
+                    </div>
+                    <div class="text-[10px] text-gray-500 leading-tight">Skills, Time-to-Hire, Scores</div>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-xl p-5 border-l-4 border-l-gray-600 relative mt-2">
+                <h3 class="font-bold text-gray-300 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-cloud"></i> Unstructured Noise
+                </h3>
+                <div class="space-y-2">
+                    <div class="bg-gray-800 p-2 rounded text-[10px] font-mono text-gray-400 border border-gray-700 truncate">
+                        <i class="fa-regular fa-file-pdf mr-1"></i> "Client SOW: senior Python..."
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded text-[10px] font-mono text-gray-400 border border-gray-700 truncate">
+                        <i class="fa-brands fa-slack mr-1"></i> "Slack: bench is getting deep..."
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded text-[10px] font-mono text-gray-400 border border-gray-700 truncate">
+                        <i class="fa-regular fa-envelope mr-1"></i> "Review: Sarah looks burned out..."
+                    </div>
+                </div>
+                
+                <!-- Funnel Visual -->
+                <div class="mt-4 flex items-center justify-center gap-2 text-resultGreen text-xs font-bold bg-resultGreenDim p-2 rounded border border-resultGreen/30">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Ingestion
+                </div>
+            </div>
+        </div>
+
+        <!-- STAGE 2: THE ENGINE -->
+        <div class="lg:col-span-4 flex flex-col gap-4 relative connector-arrow">
+            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 2: The Engine (4 Weeks)</div>
+            <div class="glass-panel rounded-xl p-6 h-full flex flex-col justify-between relative overflow-hidden border-t-2 border-t-resultGreen">
+                <!-- Background Circuitry -->
+                <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2300E599\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+                <!-- Timeline -->
+                <div class="space-y-4 relative z-10">
+                    
+                    <!-- Week 1 -->
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center group-hover:border-resultGreen group-hover:text-resultGreen transition-colors shrink-0">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Week 1: Foundation</h4>
+                            <p class="text-xs text-gray-400">PII Redaction, Anonymization, Data Normalization.</p>
+                        </div>
+                    </div>
+
+                    <!-- Week 2 -->
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center group-hover:border-resultGreen group-hover:text-resultGreen transition-colors shrink-0">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Week 2: Domain Tuning</h4>
+                            <p class="text-xs text-gray-400">Vectorizing text. Training on context (e.g., "bench" vs "vacation").</p>
+                        </div>
+                    </div>
+
+                    <!-- Week 3 -->
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center group-hover:border-resultGreen group-hover:text-resultGreen transition-colors shrink-0">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Week 3: Agent Config</h4>
+                            <p class="text-xs text-gray-400">Research Agent creation. Output validation with stakeholders.</p>
+                        </div>
+                    </div>
+
+                    <!-- Week 4 -->
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center group-hover:border-white group-hover:text-white group-hover:bg-resultGreen transition-colors shrink-0">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Week 4: Deployment</h4>
+                            <p class="text-xs text-gray-400">Final Leadership Demo. "Real Results" Impact Report.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Processing Animation -->
+                <div class="mt-6 border-t border-gray-700 pt-4">
+                    <div class="flex justify-between text-[10px] text-gray-500 font-mono mb-1">
+                        <span>PROCESSING...</span>
+                        <span>100% SECURE</span>
+                    </div>
+                    <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-resultGreen/50 to-resultGreen w-full animate-flow data-stream"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STAGE 3: THE OUTPUT -->
+        <div class="lg:col-span-3 flex flex-col gap-4 relative connector-arrow">
+            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 3: Your AI Co-workers</div>
+            
+            <!-- Avatar 1: People AI -->
+            <div class="glass-panel rounded-xl p-4 border border-neonPurple/50 shadow-[0_0_15px_rgba(139,92,246,0.15)] transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="flex items-center gap-3 mb-3 border-b border-gray-700 pb-2">
+                    <div class="w-10 h-10 rounded-full bg-neonPurple/20 flex items-center justify-center text-neonPurple border border-neonPurple">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-white">People AI</div>
+                        <div class="text-[10px] text-neonPurple font-mono">Retention & Culture</div>
+                    </div>
+                </div>
+                <!-- Dashboard Snippets -->
+                <div class="space-y-2">
+                    <div class="bg-black/50 p-2 rounded border-l-2 border-red-500">
+                        <div class="text-[10px] text-gray-400 uppercase font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-triangle-exclamation text-red-500"></i> Burnout Risk
+                        </div>
+                        <div class="text-[10px] text-gray-200 mt-1">3 Sr. Consultants showing high overtime & negative sentiment.</div>
+                    </div>
+                    <div class="bg-black/50 p-2 rounded border-l-2 border-neonPurple">
+                        <div class="text-[10px] text-gray-400 uppercase font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-route text-neonPurple"></i> Career Path
+                        </div>
+                        <div class="text-[10px] text-gray-200 mt-1">Upskilling needed for Associate Engineers for Q3 demand.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avatar 2: Projects AI -->
+            <div class="glass-panel rounded-xl p-4 border border-neonOrange/50 shadow-[0_0_15px_rgba(249,115,22,0.15)] transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="flex items-center gap-3 mb-3 border-b border-gray-700 pb-2">
+                    <div class="w-10 h-10 rounded-full bg-neonOrange/20 flex items-center justify-center text-neonOrange border border-neonOrange">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-white">Projects AI</div>
+                        <div class="text-[10px] text-neonOrange font-mono">Utilization & Demand</div>
+                    </div>
+                </div>
+                <!-- Dashboard Snippets -->
+                <div class="space-y-2">
+                    <div class="bg-black/50 p-2 rounded border-l-2 border-resultGreen">
+                        <div class="text-[10px] text-gray-400 uppercase font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-puzzle-piece text-resultGreen"></i> Skills Match
+                        </div>
+                        <div class="text-[10px] text-gray-200 mt-1">Found 2 internal candidates for 'Project Alpha' currently on bench.</div>
+                    </div>
+                    <div class="bg-black/50 p-2 rounded border-l-2 border-neonOrange">
+                        <div class="text-[10px] text-gray-400 uppercase font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-money-bill-wave text-neonOrange"></i> Revenue Leak
+                        </div>
+                        <div class="text-[10px] text-gray-200 mt-1">Flagging 40hrs non-billable time on T&M project.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STAGE 4: THE OUTCOME -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
+            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 4: Results</div>
+            <div class="glass-panel rounded-xl p-4 h-full flex flex-col justify-center gap-4 bg-gradient-to-b from-gray-900 to-emerald-900/20 border border-emerald-900">
+                
+                <!-- Metric 1 -->
+                <div class="text-center">
+                    <div class="relative w-20 h-10 overflow-hidden mx-auto mb-1">
+                        <div class="w-20 h-20 rounded-full border-4 border-gray-700 border-t-resultGreen border-r-resultGreen transform -rotate-45 box-border"></div>
+                    </div>
+                    <div class="text-2xl font-bold text-white leading-none">85%</div>
+                    <div class="text-[10px] text-resultGreen font-bold uppercase tracking-wide">Utilization</div>
+                    <div class="text-[9px] text-gray-400">Cut Bench Time</div>
+                </div>
+
+                <div class="w-full h-px bg-gray-700"></div>
+
+                <!-- Metric 2 -->
+                <div class="text-center">
+                    <div class="flex justify-center gap-1 mb-1 text-neonPurple">
+                        <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                    </div>
+                    <div class="text-lg font-bold text-white flex justify-center items-center gap-1">
+                        <i class="fa-solid fa-arrow-down text-xs text-resultGreen"></i> Churn
+                    </div>
+                    <div class="text-[10px] text-neonPurple font-bold uppercase tracking-wide">Retention</div>
+                    <div class="text-[9px] text-gray-400">Keep Top Talent</div>
+                </div>
+
+                <div class="w-full h-px bg-gray-700"></div>
+
+                <!-- Metric 3 -->
+                <div class="text-center">
+                    <div class="flex justify-center items-end gap-1 h-8 mb-1">
+                        <div class="w-2 h-3 bg-gray-600 rounded-t"></div>
+                        <div class="w-2 h-5 bg-gray-500 rounded-t"></div>
+                        <div class="w-2 h-8 bg-resultGreen rounded-t"></div>
+                    </div>
+                    <div class="text-lg font-bold text-white">Profit</div>
+                    <div class="text-[10px] text-emerald-400 font-bold uppercase tracking-wide">Maximized</div>
+                    <div class="text-[9px] text-gray-400">Stop Rev Leaks</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA Footer -->
+    <div class="mt-12 text-center max-w-3xl mx-auto">
+        <div class="inline-block p-1 rounded-full bg-gradient-to-r from-resultGreen to-emerald-600 mb-6">
+            <div class="bg-gray-900 rounded-full px-8 py-4">
+                <span class="text-white font-bold text-lg mr-2">Small Investment. Fast Proof.</span>
+                <span class="text-gray-400 text-sm block md:inline">Limited Pilot slots available.</span>
+            </div>
+        </div>
+        <br>
+        <button class="bg-resultGreen text-resultDark font-bold py-3 px-8 rounded-lg shadow-[0_0_20px_rgba(0,229,153,0.3)] hover:scale-105 transition-transform duration-200">
+            Contact ResultAI for your 4-Week Sprint
+        </button>
+        <p class="mt-6 text-gray-500 text-xs">
+            © 2025 ResultAI. Secure Data Processing. SOC2 Compliant.
+        </p>
+    </div>
+
+</body>
+</html>
